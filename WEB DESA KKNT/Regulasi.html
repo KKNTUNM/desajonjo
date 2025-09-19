@@ -1,0 +1,161 @@
+
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WEBSITE DESA JONJO</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">WEBSITE DESA</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="ProfilDesa.html">Profil Desa</a></li>
+								<li><a href="PemerintahDesa.html">Pemerintah Desa</a></li>
+								<li><a href="DataDesa.html">Data Desa</a></li>
+								<li><a href="Regulasi.html">Regulasi</a></li>
+								<li><a href="PetaDesa.html">Peta</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+  <ul class="links">
+    <li>
+      <a href="ProfilDesa.html" onclick="loadPage(event, 'ProfilDesa.html')">
+        <h3>Profil Desa</h3>
+        <p>Feugiat tempus veroeros dolo</p>
+      </a>
+    </li>
+    <li>
+      <a href="PemerintahDesa.html" onclick="loadPage(event, 'PemerintahDesa.html')">
+        <h3>Pemerintah Desa</h3>
+        <p>Struktur Aparat Desa</p>
+      </a>
+    </li>
+    <li>
+      <a href="DataDesa.html" onclick="loadPage(event, 'DataDesa.html')">
+        <h3>Data Desa</h3>
+        <p>Membangun Desa Melalui Data</p>
+      </a>
+    </li>
+    <li>
+      <a href="Regulasi.html" onclick="loadPage(event, 'Regulasi.html')">
+        <h3>Regulasi</h3>
+        <p>Porta lectus amet ultricies</p>
+      </a>
+    </li>
+    <li>
+      <a href="PetaDesa.html" onclick="loadPage(event, 'PetaDesa.html')">
+        <h3>Peta</h3>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- Tempat file ditampilkan -->
+<div id="content" style="margin-top:20px; padding:20px; border:1px solid #ccc;"></div>
+
+<script>
+  function loadPage(event, url) {
+    event.preventDefault(); // cegah pindah halaman
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("content").innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById("content").innerHTML = "<p>Gagal memuat konten.</p>";
+      });
+  }
+</script>
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						
+
+					</div>
+
+			
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
