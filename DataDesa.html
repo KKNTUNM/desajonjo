@@ -114,16 +114,154 @@
 
 					</section>
 
-				<!-- Main -->
-					<div id="main">
+				    <!-- Main Content -->
+    <main class="datadesa-main">
+        <div class="datadesa-container">
+            <h2 class="datadesa-section-title">Data Kependudukan Desa Jonjo</h2>
+            
+            <!-- Jumlah Penduduk dan Kepala Keluarga -->
+            <section class="datadesa-card">
+                <div class="datadesa-card-header">
+                    <h3>Jumlah Penduduk dan Kepala Keluarga</h3>
+                </div>
+                <div class="datadesa-card-body">
+                    <div class="datadesa-stats-grid">
+                        <div class="datadesa-stat-box">
+                            <div class="datadesa-stat-icon">
+                                <i class="icon">👥</i>
+                            </div>
+                            <div class="datadesa-stat-content">
+                                <h4>Total Penduduk</h4>
+                                <span class="datadesa-stat-number">3,842</span>
+                            </div>
+                        </div>
+                        
+                        <div class="datadesa-stat-box">
+                            <div class="datadesa-stat-icon">
+                                <i class="icon">🏠</i>
+                            </div>
+                            <div class="datadesa-stat-content">
+                                <h4>Kepala Keluarga</h4>
+                                <span class="datadesa-stat-number">1,125</span>
+                            </div>
+                        </div>
+                        
+                        <div class="datadesa-stat-box">
+                            <div class="datadesa-stat-icon">
+                                <i class="icon">♂️</i>
+                            </div>
+                            <div class="datadesa-stat-content">
+                                <h4>Laki-laki</h4>
+                                <span class="datadesa-stat-number">1,950</span>
+                                <span class="datadesa-stat-percent">50.7%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="datadesa-stat-box">
+                            <div class="datadesa-stat-icon">
+                                <i class="icon">♀️</i>
+                            </div>
+                            <div class="datadesa-stat-content">
+                                <h4>Perempuan</h4>
+                                <span class="datadesa-stat-number">1,892</span>
+                                <span class="datadesa-stat-percent">49.3%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-						
+            <!-- Piramida Penduduk -->
+            <section class="datadesa-card">
+                <div class="datadesa-card-header">
+                    <h3>Piramida Penduduk Berdasarkan Kelompok Umur</h3>
+                </div>
+                <div class="datadesa-card-body">
+                    <div class="datadesa-chart-container">
+                        <canvas id="populationPyramid"></canvas>
+                    </div>
+                    <div class="datadesa-chart-description">
+                        <h4>Interpretasi Piramida Penduduk</h4>
+                        <p>Piramida penduduk Desa Jonjo menunjukkan struktur penduduk yang cukup seimbang antara kelompok usia muda dan dewasa. Dapat dilihat bahwa:</p>
+                        <ul>
+                            <li>Kelompok usia produktif (15-64 tahun) mendominasi dengan persentase 62% dari total penduduk</li>
+                            <li>Kelompok usia muda (0-14 tahun) sebesar 28% menunjukkan tingkat kelahiran yang stabil</li>
+                            <li>Kelompok usia lanjut (65+) sebesar 10% menunjukkan peningkatan harapan hidup</li>
+                            <li>Bentuk piramida yang melebar di bagian tengah mengindikasikan transisi demografi menuju masyarakat menua</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-					</div>
+            <!-- Distribusi Penduduk per Dusun -->
+            <section class="datadesa-card">
+                <div class="datadesa-card-header">
+                    <h3>Distribusi Penduduk Berdasarkan Dusun</h3>
+                </div>
+                <div class="datadesa-card-body">
+                    <div class="datadesa-chart-container">
+                        <canvas id="dusunDistribution"></canvas>
+                    </div>
+                    <div class="datadesa-dusun-details">
+                        <div class="datadesa-dusun-item">
+                            <span class="datadesa-dusun-color" style="background-color: #4e73df;"></span>
+                            <span class="datadesa-dusun-name">Dusun Krajan</span>
+                            <span class="datadesa-dusun-population">1,250 jiwa (32.5%)</span>
+                        </div>
+                        <div class="datadesa-dusun-item">
+                            <span class="datadesa-dusun-color" style="background-color: #1cc88a;"></span>
+                            <span class="datadesa-dusun-name">Dusun Sumber</span>
+                            <span class="datadesa-dusun-population">980 jiwa (25.5%)</span>
+                        </div>
+                        <div class="datadesa-dusun-item">
+                            <span class="datadesa-dusun-color" style="background-color: #36b9cc;"></span>
+                            <span class="datadesa-dusun-name">Dusun Krajan Barat</span>
+                            <span class="datadesa-dusun-population">872 jiwa (22.7%)</span>
+                        </div>
+                        <div class="datadesa-dusun-item">
+                            <span class="datadesa-dusun-color" style="background-color: #f6c23e;"></span>
+                            <span class="datadesa-dusun-name">Dusun Krajan Timur</span>
+                            <span class="datadesa-dusun-population">740 jiwa (19.3%)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-			
+            <!-- Tingkat Pendidikan -->
+            <section class="datadesa-card">
+                <div class="datadesa-card-header">
+                    <h3>Tingkat Pendidikan Penduduk</h3>
+                </div>
+                <div class="datadesa-card-body">
+                    <div class="datadesa-chart-container">
+                        <canvas id="educationChart"></canvas>
+                    </div>
+                    <div class="datadesa-education-notes">
+                        <p><strong>Keterangan:</strong> Data pendidikan berdasarkan penduduk berusia 5 tahun ke atas. Diagram menunjukkan bahwa mayoritas penduduk memiliki pendidikan setingkat SLTA, diikuti oleh SLTP. Prosentase penduduk dengan pendidikan tinggi (Diploma dan Strata) masih relatif rendah.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-			</div>
+    <!-- Footer -->
+    <footer class="datadesa-footer">
+        <div class="datadesa-container">
+            <div class="datadesa-footer-content">
+                <div class="datadesa-footer-section">
+                    <h3>Data Desa Jonjo</h3>
+                    <p>Sumber data: Registrasi Administrasi Kependudukan Desa Jonjo, Tahun 2023</p>
+                </div>
+                <div class="datadesa-footer-section">
+                    <h3>Update Terakhir</h3>
+                    <p>15 November 2023</p>
+                </div>
+            </div>
+            <div class="datadesa-footer-bottom">
+                <p>&copy; 2023 Pemerintah Desa Jonjo. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -131,6 +269,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+			<script src="DataDesa.js"></script>
 
 	</body>
 
