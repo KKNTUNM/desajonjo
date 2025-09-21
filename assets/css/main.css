@@ -2809,39 +2809,208 @@ body {
     }
     
 }
-
-/* Profil Desa */
-	.profil-container {
-		max-width: 900px;
-		margin: 2rem auto;
-		padding: 0 1rem;
-	}
-
-	.profil-container section {
-		margin-bottom: 2.5rem;
-	}
-
-	.profil-container h2 {
-		color: #2c7a7b;
-		margin-bottom: 1rem;
-	}
-
-	.profil-container p {
-		font-size: 1.1rem;
-		line-height: 1.8;
-		text-align: justify;
-	}
-
-	.profil-container iframe,
-	.profil-container video {
-		width: 100%;
-		max-width: 800px;
-		height: 450px;
-		border-radius: 10px;
-		box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-		display: block;
-		margin: 0 auto;
-	}
+/* PETA DESA */
+        .map-container {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        #map {
+            width: 100%;
+            height: 500px;
+            z-index: 1;
+        }
+        
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 200px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .legend h4 {
+            margin-bottom: 12px;
+            color: #2c3e50;
+            font-size: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .color-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: inline-block;
+            border: 2px solid white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .kantor-desa {
+            background-color: #e74c3c;
+        }
+        
+        .pasar-desa {
+            background-color: #3498db;
+        }
+        
+        .masjid {
+            background-color: #2ecc71;
+        }
+        
+        .sekolah {
+            background-color: #f39c12;
+        }
+        
+        .posyandu {
+            background-color: #9b59b6;
+        }
+        
+        .lapangan {
+            background-color: #1abc9c;
+        }
+        
+        .info-panel {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .info-panel h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .info-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .data-info {
+            background: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .data-info h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .control-btn {
+            padding: 12px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-btn:hover {
+            background: #2980b9;
+        }
+        
+        .control-btn i {
+            font-size: 1.2rem;
+        }
+        
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-btn {
+            padding: 10px 15px;
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            #map {
+                height: 400px;
+            }
+            
+            .legend {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px;
+                max-width: 150px;
+            }
+            
+            .legend h4 {
+                font-size: 0.9rem;
+            }
+            
+            .color-box {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+        }
 
 
 /* Posts */
@@ -3887,16 +4056,68 @@ body {
 		text-align: center;
 	}
 
-/* Gaya Umum untuk Data Desa */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f8f9fc;
-    margin: 0;
-    padding: 0;
-}
 
+/* Profil Desa */
+	.profil-container {
+		max-width: 900px;
+		margin: 2rem auto;
+		padding: 0 1rem;
+	}
+
+	.profil-container section {
+		margin-bottom: 2.5rem;
+	}
+
+	.profil-container h2 {
+		color: #2c7a7b;
+		margin-bottom: 1rem;
+	}
+
+	.profil-container p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		text-align: justify;
+	}
+
+    .video-section {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .video-info {
+            text-align: center;
+            margin-top: 15px;
+            color: #7f8c8d;
+        }
+
+/* Gaya Umum untuk Data Desa */
 .datadesa-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -4364,7 +4585,6 @@ body {
 			}
 
 		}
-
 
 
 
