@@ -169,6 +169,69 @@ if (window.location.hash) {
         }, 100);
     }
 }
+// Regulasi
+// Fungsi untuk memuat daftar regulasi
+function loadRegulations() {
+    console.log("Memuat daftar regulasi...");
+    // Di sini Anda akan mengambil data dari API atau server
+}
+
+// Fungsi untuk mencari regulasi
+function searchRegulations(keyword) {
+    console.log(`Mencari regulasi dengan kata kunci: ${keyword}`);
+    // Di sini Anda akan mengirim permintaan pencarian ke server
+}
+
+// Fungsi untuk memfilter regulasi
+function filterRegulations(category, sortBy) {
+    console.log(`Memfilter regulasi dengan kategori: ${category} dan pengurutan: ${sortBy}`);
+    // Di sini Anda akan mengirim permintaan filter ke server
+}
+
+// Event listeners setelah DOM selesai dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    // Memuat regulasi saat halaman dimuat
+    loadRegulations();
+    
+    // Menangani pencarian
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+    
+    searchButton.addEventListener('click', () => {
+        if (searchInput.value.trim() !== '') {
+            searchRegulations(searchInput.value.trim());
+        }
+    });
+    
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim() !== '') {
+            searchRegulations(searchInput.value.trim());
+        }
+    });
+    
+    // Menangani filter
+    const filterSelects = document.querySelectorAll('.filter-select');
+    
+    filterSelects.forEach(select => {
+        select.addEventListener('change', () => {
+            const category = filterSelects[0].value;
+            const sortBy = filterSelects[1].value;
+            filterRegulations(category, sortBy);
+        });
+    });
+    
+    // Menambahkan efek hover pada kartu regulasi
+    const regulationItems = document.querySelectorAll('.regulation-item');
+    regulationItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.borderLeftColor = '#2c3e50';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.borderLeftColor = '#3498db';
+        });
+    });
+});
 
 // Data GeoJSON untuk batas wilayah Desa Jonjo
         const geoJsonData = {
