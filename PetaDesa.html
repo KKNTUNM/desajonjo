@@ -9,6 +9,14 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+		<!-- Plugin kompas -->
+		<script src="https://unpkg.com/leaflet-compass/dist/leaflet-compass.min.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-compass/dist/leaflet-compass.css"/>
+		<!-- Plugin inset mini map -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.css"/>
+		<script src="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.js"></script>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -16,7 +24,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.html">WEBSITE DESA JONJO</a></h1>
+						<h1><a href="index.html">WEBSITE DESA</a></h1>
 						<nav class="links">
 							<ul>
 								<li><a href="ProfilDesa.html">Profil Desa</a></li>
@@ -112,80 +120,96 @@
 					</section>
 
 				<!-- Main -->
-					<div id="main">
-						    <div class="container">
-								<header>
-									<h1>Desa Jonjo</h1>
-									<p>Kecamatan Parigi, Kabupaten Gowa, Sulawesi Selatan</p>
-								</header>
-								
-								<div class="content">
-									<div class="map-container">
-										<div id="map"></div>
-									</div>
-									
-									<div class="info-panel">
-										<h2>Informasi Lokasi</h2>
-										
-										<div class="location-info">
-											<div class="info-item">
-												<span class="label">Provinsi:</span>
-												<span class="value">Sulawesi Selatan</span>
-											</div>
-											<div class="info-item">
-												<span class="label">Kabupaten:</span>
-												<span class="value">Gowa</span>
-											</div>
-											<div class="info-item">
-												<span class="label">Kecamatan:</span>
-												<span class="value">Parigi</span>
-											</div>
-											<div class="info-item">
-												<span class="label">Desa:</span>
-												<span class="value">Jonjo</span>
-											</div>
-											<div class="info-item">
-												<span class="label">Koordinat:</span>
-												<span class="value">5.3241° S, 119.6897° T</span>
-											</div>
-										</div>
-										
-										<h2>Kontrol Peta</h2>
-										<div class="map-controls">
-											<button class="map-btn" onclick="focusOnDesaJonjo()">Fokus ke Desa Jonjo</button>
-											<button class="map-btn" onclick="showParigi()">Lihat Kecamatan Parigi</button>
-											<button class="map-btn" onclick="showKabupatenGowa()">Lihat Kabupaten Gowa</button>
-											<button class="map-btn highlight" onclick="showAllMarkers()">Tampilkan Semua Marker</button>
-										</div>
-									</div>
-								</div>
-								
-								<div class="footer">
-									<p>© 2023 Peta Interaktif Desa Jonjo | Data koordinat merupakan contoh</p>
-								</div>
-							</div>
-
-
-
-
+				<div class="container">
+					<header>
+						<h1>Peta Desa Jonjo</h1>
+						<p>Kecamatan Parigi, Kabupaten Gowa, Sulawesi Selatan</p>
+					</header>						
+					<div class="controls">
+						<button class="control-btn" id="zoom-in">
+							<i>+</i> Perbesar
+						</button>
+						<button class="control-btn" id="zoom-out">								<i>-</i> Perkecil
+						</button>
+						<button class="control-btn" id="reset-view">
+							<i>↺</i> Reset Peta
+						</button>
 					</div>
-
-			
+						
+					<div class="filter-controls">
+						<button class="filter-btn active" data-filter="all">Semua Lokasi</button>
+						<button class="filter-btn" data-filter="kantor_desa">Kantor Desa</button>
+						<button class="filter-btn" data-filter="pasar_desa">Pasar Desa</button>
+						<button class="filter-btn" data-filter="masjid">Masjid</button>
+						<button class="filter-btn" data-filter="sekolah">Sekolah</button>							<button class="filter-btn" data-filter="posyandu">Posyandu</button>
+						<button class="filter-btn" data-filter="lapangan">Lapangan</button>
+					</div>
+						
+					<div class="map-container">
+						<div id="map"></div>				
+						<div class="legend">
+							<h4>Legenda</h4>
+							<div class="legend-item">
+								<span class="color-box kantor-desa"></span>
+								<span>Kantor Desa</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box pasar-desa"></span>
+								<span>Pasar Desa</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box masjid"></span>
+								<span>Masjid</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box sekolah"></span>
+								<span>Sekolah</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box posyandu"></span>
+								<span>Posyandu</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box lapangan"></span>
+								<span>Lapangan</span>
+							</div>
+							<div class="legend-item">
+								<span style="background: #3498db; opacity: 0.2; width: 20px; height: 20px; display: inline-block; margin-right: 10px; border: 1px dashed #3498db;"></span>
+								<span>Batas Desa</span>
+							</div>
+						</div>
+					</div>
+						
+					<div class="info-panel">
+						<h3>Informasi Desa</h3>
+						<div class="info-content">
+							<p>Desa Jonjo terletak di Kecamatan Parigi, Kabupaten Gowa, Provinsi Sulawesi Selatan. Desa ini memiliki beragam fasilitas umum yang melayani kebutuhan masyarakat setempat.</p>
+							<p>Peta ini menunjukkan batas wilayah desa serta lokasi penting seperti kantor desa, pasar, masjid, sekolah, posyandu, dan lapangan.</p>
+								
+							<div class="data-info">
+								<h4>Data yang Ditampilkan</h4>
+								<p>Peta menampilkan 13 masjid, 3 sekolah, 5 posyandu, dan lokasi penting lainnya di Desa Jonjo. Gunakan tombol filter di atas peta untuk menampilkan hanya kategori tertentu.</p>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<p> © 2025 Peta Interaktif Desa Jonjo | Dikembangkan oleh KKNT Statistika UNM Tahun 2025 untuk Website Desa Jonjo</p>
+					</footer>
+				</div>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 	</body>
 
 </html>
-
 
 
 
