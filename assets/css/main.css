@@ -4486,6 +4486,192 @@ body {
             }
         }
 
+		
+/* Regulasi */
+	/* Main Content */
+		.regulasimain-content {
+			max-width: 1200px;
+			margin: 0 auto;
+			background: white;
+			border-radius: 5px;
+			box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+			overflow: hidden;
+		}
+
+	/* Article Styles */
+		.article-header {
+			padding: 40px 40px 20px;
+			background: #2c3e50;
+			color: white;
+		}
+
+		.article-title {
+			font-size: 2rem;
+			margin-bottom: 15px;
+			color: white;
+		}
+
+		.article-meta {
+			display: flex;
+			align-items: center;
+			color: rgba(255, 255, 255, 0.8);
+			font-size: 0.9rem;
+			margin-bottom: 20px;
+		}
+
+		.article-meta .date {
+			margin-right: 20px;
+		}
+
+		.article-meta .category {
+			background: #3498db;
+			color: white;
+			padding: 3px 10px;
+			border-radius: 3px;
+			font-size: 0.8rem;
+		}
+
+		.article-content {
+			padding: 40px;
+		}
+
+		.article-content p {
+			margin-bottom: 20px;
+		}
+
+	/* Regulation List */
+		.regulation-list {
+			list-style: none;
+			margin: 30px 0;
+		}
+
+		.regulation-item {
+			padding: 20px;
+			border-left: 4px solid #3498db;
+			background: #f9f9f9;
+			margin-bottom: 20px;
+			transition: transform 0.3s;
+		}
+
+		.regulation-item:hover {
+			transform: translateX(5px);
+		}
+
+		.regulation-title {
+			font-size: 1.3rem;
+			margin-bottom: 10px;
+			color: #2c3e50;
+		}
+
+		.regulation-meta {
+			display: flex;
+			font-size: 0.9rem;
+			color: #7f8c8d;
+			margin-bottom: 15px;
+		}
+
+		.regulation-date {
+			margin-right: 20px;
+		}
+
+		.regulation-desc {
+			margin-bottom: 15px;
+			line-height: 1.6;
+		}
+
+		.regulation-link {
+			display: inline-block;
+			padding: 8px 20px;
+			background: #2c3e50;
+			color: white;
+			border-radius: 3px;
+			font-size: 0.9rem;
+			font-weight: 600;
+		}
+
+		.regulation-link:hover {
+			background: #3498db;
+			color: white;
+		}
+
+	/* Filter Section */
+		.filter-section {
+			background: #f1f1f1;
+			padding: 20px 40px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		.filter-group {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+		}
+
+		.filter-label {
+			font-weight: 600;
+			color: #2c3e50;
+		}
+
+		.filter-select {
+			padding: 8px 15px;
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			background: white;
+			font-family: inherit;
+		}
+
+		.search-box {
+			display: flex;
+		}
+
+		.search-input {
+			padding: 8px 15px;
+			border: 1px solid #ddd;
+			border-right: none;
+			border-radius: 3px 0 0 3px;
+			font-family: inherit;
+			width: 200px;
+		}
+
+		.search-button {
+			background: #2c3e50;
+			color: white;
+			border: none;
+			padding: 0 15px;
+			border-radius: 0 3px 3px 0;
+			cursor: pointer;
+		}
+
+	/* Responsive Styles */
+		@media (max-width: 768px) {
+			.article-header, .article-content {
+				padding: 25px;
+			}
+			
+			.article-title {
+				font-size: 1.7rem;
+			}
+			
+			.regulation-title {
+				font-size: 1.2rem;
+			}
+			
+			.filter-section {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 15px;
+			}
+			
+			.search-input {
+				width: 100%;
+			}
+		}
+
+
+
 /* Menu */
 
 	#menu {
