@@ -637,6 +637,124 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
 
+			// Initialize Pekerjaan Chart
+function initPekerjaanChart() {
+    const ctx = document.getElementById('pekerjaanChart');
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Pertanian', 'Perdagangan', 'Buruh', 'PNS', 'Wiraswasta', 'Lainnya'],
+            datasets: [{
+                data: [1345, 692, 576, 461, 384, 384],
+                backgroundColor: [
+                    'rgba(78, 115, 223, 0.8)',
+                    'rgba(28, 200, 138, 0.8)',
+                    'rgba(54, 185, 204, 0.8)',
+                    'rgba(246, 194, 62, 0.8)',
+                    'rgba(231, 74, 59, 0.8)',
+                    'rgba(111, 66, 193, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(78, 115, 223, 1)',
+                    'rgba(28, 200, 138, 1)',
+                    'rgba(54, 185, 204, 1)',
+                    'rgba(246, 194, 62, 1)',
+                    'rgba(231, 74, 59, 1)',
+                    'rgba(111, 66, 193, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const value = context.raw;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = Math.round((value / total) * 100);
+                            return `${context.label}: ${value} orang (${percentage}%)`;
+                        }
+                    }
+                }
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true,
+                duration: 1000,
+                easing: 'easeOutQuart'
+            }
+        }
+    });
+}
+
+// Update the initDataDesaCharts function to include pekerjaan chart
+function initDataDesaCharts() {
+    try {
+        // Check if Chart.js is available
+        if (typeof Chart === 'undefined') {
+            throw new Error('Chart.js library not loaded');
+        }
+        
+        // Initialize all charts
+        initPopulationPyramid();
+        initDusunDistribution();
+        initEducationChart();
+        initPekerjaanChart(); // Add this line
+        
+        // Add resize event listener for responsiveness
+        window.addEventListener('resize', debounce(function() {
+            resizeCharts();
+        }, 250));
+        
+        // Animate progress bars
+        animateProgressBars();
+        
+        console.log('Data Desa charts initialized successfully');
+    } catch (error) {
+        console.error('Error initializing charts:', error);
+        displayChartError(error.message);
+    }
+}
+
+// Add pekerjaan chart to resize function
+function resizeCharts() {
+    const charts = [
+        Chart.getChart('populationPyramid'),
+        Chart.getChart('dusunDistribution'),
+        Chart.getChart('educationChart'),
+        Chart.getChart('pekerjaanChart') // Add this line
+    ];
+    
+    charts.forEach(chart => {
+        if (chart) {
+            chart.resize();
+        }
+    });
+}
+
+// Animate progress bars
+function animateProgressBars() {
+    const progressBars = document.querySelectorAll('.pekerjaan-top-progress');
+    progressBars.forEach(bar => {
+        // Reset width to 0 for animation
+        const width = bar.style.width;
+        bar.style.width = '0';
+        
+        // Animate to full width after a short delay
+        setTimeout(() => {
+            bar.style.width = width;
+        }, 500);
+    });
+}
+
             // Tingkat Pendidikan
             const educationCanvas = document.getElementById('educationChart');
             if (educationCanvas) {
@@ -690,8 +808,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+
         // Jalankan fungsi inisialisasi ketika halaman selesai dimuat
         document.addEventListener('DOMContentLoaded', initCharts);
+
 
 
 })(jQuery);
