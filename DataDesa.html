@@ -1,169 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Kependudukan Desa Jonjo - Website Resmi Desa Jonjo</title>
+    <meta name="description" content="Data lengkap kependudukan Desa Jonjo meliputi jumlah penduduk, distribusi per dusun, piramida penduduk, dan tingkat pendidikan.">
+    <meta name="keywords" content="data desa, kependudukan, desa jonjo, statistik penduduk, piramida penduduk">
+    <meta name="author" content="Pemerintah Desa Jonjo">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desajonjo.example/DataDesa.html">
+    <meta property="og:title" content="Data Kependudukan Desa Jonjo">
+    <meta property="og:description" content="Data lengkap kependudukan Desa Jonjo">
+    <meta property="og:image" content="https://desajonjo.example/images/data-penduduk-preview.png">
 
-<!DOCTYPE HTML>
-<!--
-	Future Imperfect by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>WEBSITE DESA JONJO</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	</head>
-	<body class="is-preload">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://desajonjo.example/DataDesa.html">
+    <meta property="twitter:title" content="Data Kependudukan Desa Jonjo">
+    <meta property="twitter:description" content="Data lengkap kependudukan Desa Jonjo">
+    <meta property="twitter:image" content="https://desajonjo.example/images/data-penduduk-preview.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/data-desa.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/chart.js" as="script">
+    <link rel="preload" href="assets/js/data-desa-charts.js" as="script">
+</head>
+<body class="is-preload data-desa-page">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Langsung ke konten utama</a>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">WEBSITE DESA JONJO</a></h1>
-						<nav class="links">
-							<ul>
-								<li><a href="ProfilDesa.html">Profil Desa</a></li>
-								<li><a href="PemerintahDesa.html">Pemerintah Desa</a></li>
-								<li><a href="DataDesa.html">Data Desa</a></li>
-								<li><a href="Regulasi.html">Regulasi</a></li>
-								<li><a href="PetaDesa.html">Peta</a></li>
-							</ul>
-						</nav>
-						<nav class="main">
-							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
-									</form>
-								</li>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
-					</header>
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html">WEBSITE DESA JONJO</a></h1>
+        <nav class="links">
+            <ul>
+                <li><a href="ProfilDesa.html">Profil Desa</a></li>
+                <li><a href="PemerintahDesa.html">Pemerintah Desa</a></li>
+                <li><a href="DataDesa.html" aria-current="page">Data Desa</a></li>
+                <li><a href="Regulasi.html">Regulasi</a></li>
+                <li><a href="PetaDesa.html">Peta</a></li>
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="search">
+                    <a class="fa-search" href="#search">Search</a>
+                    <form id="search" method="get" action="#">
+                        <input type="text" name="query" placeholder="Search" aria-label="Cari di website">
+                    </form>
+                </li>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-				<!-- Menu -->
-					<section id="menu">
-
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
-
-						<!-- Links -->
-							<section>
-  <ul class="links">
-    <li>
-      <a href="ProfilDesa.html" onclick="loadPage(event, 'ProfilDesa.html')">
-        <h3>Profil Desa</h3>
-        <p>Feugiat tempus veroeros dolo</p>
-      </a>
-    </li>
-    <li>
-      <a href="PemerintahDesa.html" onclick="loadPage(event, 'PemerintahDesa.html')">
-        <h3>Pemerintah Desa</h3>
-        <p>Struktur Aparat Desa</p>
-      </a>
-    </li>
-    <li>
-      <a href="DataDesa.html" onclick="loadPage(event, 'DataDesa.html')">
-        <h3>Data Desa</h3>
-        <p>Membangun Desa Melalui Data</p>
-      </a>
-    </li>
-    <li>
-      <a href="Regulasi.html" onclick="loadPage(event, 'Regulasi.html')">
-        <h3>Regulasi</h3>
-        <p>Porta lectus amet ultricies</p>
-      </a>
-    </li>
-    <li>
-      <a href="PetaDesa.html" onclick="loadPage(event, 'PetaDesa.html')">
-        <h3>Peta</h3>
-      </a>
-    </li>
-  </ul>
-</section>
-
-<!-- Tempat file ditampilkan -->
-<div id="content" style="margin-top:20px; padding:20px; border:1px solid #ccc;"></div>
-
-<script>
-  function loadPage(event, url) {
-    event.preventDefault(); // cegah pindah halaman
-    fetch(url)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("content").innerHTML = data;
-      })
-      .catch(err => {
-        document.getElementById("content").innerHTML = "<p>Gagal memuat konten.</p>";
-      });
-  }
-</script>
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section>
-
-					</section>
-
-				    <!-- Main Content -->
-    <main class="datadesa-main">
+    <!-- Main Content -->
+    <main id="main-content" class="datadesa-main" role="main">
         <div class="datadesa-container">
-            <h2 class="datadesa-section-title">Data Kependudukan Desa Jonjo</h2>
+            <header class="page-header">
+                <h1>Data Kependudukan Desa Jonjo</h1>
+                <p>Update terakhir: <time datetime="2023-11-15">15 November 2023</time></p>
+            </header>
             
             <!-- Jumlah Penduduk dan Kepala Keluarga -->
-            <section class="datadesa-card">
+            <section class="datadesa-card" aria-labelledby="penduduk-title">
                 <div class="datadesa-card-header">
-                    <h3>Jumlah Penduduk dan Kepala Keluarga</h3>
+                    <h2 id="penduduk-title">Jumlah Penduduk dan Kepala Keluarga</h2>
                 </div>
                 <div class="datadesa-card-body">
                     <div class="datadesa-stats-grid">
-                        <div class="datadesa-stat-box">
-                            <div class="datadesa-stat-icon">
-                                <i class="icon">👥</i>
+                        <!-- Each stat box with proper ARIA attributes -->
+                        <div class="datadesa-stat-box" role="region" aria-label="Total Penduduk">
+                            <div class="datadesa-stat-icon" aria-hidden="true">
+                                <span>👥</span>
                             </div>
                             <div class="datadesa-stat-content">
-                                <h4>Total Penduduk</h4>
+                                <h3>Total Penduduk</h3>
                                 <span class="datadesa-stat-number">3,842</span>
+                                <span class="datadesa-stat-desc">Jiwa</span>
                             </div>
                         </div>
                         
-                        <div class="datadesa-stat-box">
-                            <div class="datadesa-stat-icon">
-                                <i class="icon">🏠</i>
+                        <div class="datadesa-stat-box" role="region" aria-label="Kepala Keluarga">
+                            <div class="datadesa-stat-icon" aria-hidden="true">
+                                <span>🏠</span>
                             </div>
                             <div class="datadesa-stat-content">
-                                <h4>Kepala Keluarga</h4>
+                                <h3>Kepala Keluarga</h3>
                                 <span class="datadesa-stat-number">1,125</span>
+                                <span class="datadesa-stat-desc">KK</span>
                             </div>
                         </div>
                         
-                        <div class="datadesa-stat-box">
-                            <div class="datadesa-stat-icon">
-                                <i class="icon">♂️</i>
+                        <div class="datadesa-stat-box" role="region" aria-label="Penduduk Laki-laki">
+                            <div class="datadesa-stat-icon" aria-hidden="true">
+                                <span>♂️</span>
                             </div>
                             <div class="datadesa-stat-content">
-                                <h4>Laki-laki</h4>
+                                <h3>Laki-laki</h3>
                                 <span class="datadesa-stat-number">1,950</span>
                                 <span class="datadesa-stat-percent">50.7%</span>
                             </div>
                         </div>
                         
-                        <div class="datadesa-stat-box">
-                            <div class="datadesa-stat-icon">
-                                <i class="icon">♀️</i>
+                        <div class="datadesa-stat-box" role="region" aria-label="Penduduk Perempuan">
+                            <div class="datadesa-stat-icon" aria-hidden="true">
+                                <span>♀️</span>
                             </div>
                             <div class="datadesa-stat-content">
-                                <h4>Perempuan</h4>
+                                <h3>Perempuan</h3>
                                 <span class="datadesa-stat-number">1,892</span>
                                 <span class="datadesa-stat-percent">49.3%</span>
                             </div>
@@ -173,16 +126,20 @@
             </section>
 
             <!-- Piramida Penduduk -->
-            <section class="datadesa-card">
+            <section class="datadesa-card" aria-labelledby="piramida-title">
                 <div class="datadesa-card-header">
-                    <h3>Piramida Penduduk Berdasarkan Kelompok Umur</h3>
+                    <h2 id="piramida-title">Piramida Penduduk Berdasarkan Kelompok Umur</h2>
                 </div>
                 <div class="datadesa-card-body">
                     <div class="datadesa-chart-container">
-                        <canvas id="populationPyramid"></canvas>
+                        <canvas id="populationPyramid" aria-label="Piramida penduduk Desa Jonjo" role="img"></canvas>
+                        <div id="pyramidDescription" class="sr-only">
+                            Grafik piramida penduduk menunjukkan distribusi usia penduduk Desa Jonjo. 
+                            Terdapat lebih banyak penduduk usia produktif antara 15-64 tahun.
+                        </div>
                     </div>
                     <div class="datadesa-chart-description">
-                        <h4>Interpretasi Piramida Penduduk</h4>
+                        <h3>Interpretasi Piramida Penduduk</h3>
                         <p>Piramida penduduk Desa Jonjo menunjukkan struktur penduduk yang cukup seimbang antara kelompok usia muda dan dewasa. Dapat dilihat bahwa:</p>
                         <ul>
                             <li>Kelompok usia produktif (15-64 tahun) mendominasi dengan persentase 62% dari total penduduk</li>
@@ -195,32 +152,37 @@
             </section>
 
             <!-- Distribusi Penduduk per Dusun -->
-            <section class="datadesa-card">
+            <section class="datadesa-card" aria-labelledby="dusun-title">
                 <div class="datadesa-card-header">
-                    <h3>Distribusi Penduduk Berdasarkan Dusun</h3>
+                    <h2 id="dusun-title">Distribusi Penduduk Berdasarkan Dusun</h2>
                 </div>
                 <div class="datadesa-card-body">
                     <div class="datadesa-chart-container">
-                        <canvas id="dusunDistribution"></canvas>
+                        <canvas id="dusunDistribution" aria-label="Distribusi penduduk per dusun di Desa Jonjo" role="img"></canvas>
+                        <div id="dusunDescription" class="sr-only">
+                            Grafik distribusi penduduk per dusun menunjukkan bahwa Dusun Krajan memiliki penduduk terbanyak yaitu 32.5%,
+                            diikuti oleh Dusun Sumber 25.5%, Dusun Krajan Barat 22.7%, dan Dusun Krajan Timur 19.3%.
+                        </div>
                     </div>
-                    <div class="datadesa-dusun-details">
+                    <div class="datadesa-dusun-details" role="region" aria-labelledby="dusun-details-title">
+                        <h3 id="dusun-details-title" class="sr-only">Detail Jumlah Penduduk per Dusun</h3>
                         <div class="datadesa-dusun-item">
-                            <span class="datadesa-dusun-color" style="background-color: #4e73df;"></span>
+                            <span class="datadesa-dusun-color" style="background-color: #4e73df;" aria-hidden="true"></span>
                             <span class="datadesa-dusun-name">Dusun Krajan</span>
                             <span class="datadesa-dusun-population">1,250 jiwa (32.5%)</span>
                         </div>
                         <div class="datadesa-dusun-item">
-                            <span class="datadesa-dusun-color" style="background-color: #1cc88a;"></span>
+                            <span class="datadesa-dusun-color" style="background-color: #1cc88a;" aria-hidden="true"></span>
                             <span class="datadesa-dusun-name">Dusun Sumber</span>
                             <span class="datadesa-dusun-population">980 jiwa (25.5%)</span>
                         </div>
                         <div class="datadesa-dusun-item">
-                            <span class="datadesa-dusun-color" style="background-color: #36b9cc;"></span>
+                            <span class="datadesa-dusun-color" style="background-color: #36b9cc;" aria-hidden="true"></span>
                             <span class="datadesa-dusun-name">Dusun Krajan Barat</span>
                             <span class="datadesa-dusun-population">872 jiwa (22.7%)</span>
                         </div>
                         <div class="datadesa-dusun-item">
-                            <span class="datadesa-dusun-color" style="background-color: #f6c23e;"></span>
+                            <span class="datadesa-dusun-color" style="background-color: #f6c23e;" aria-hidden="true"></span>
                             <span class="datadesa-dusun-name">Dusun Krajan Timur</span>
                             <span class="datadesa-dusun-population">740 jiwa (19.3%)</span>
                         </div>
@@ -229,24 +191,67 @@
             </section>
 
             <!-- Tingkat Pendidikan -->
-            <section class="datadesa-card">
+            <section class="datadesa-card" aria-labelledby="pendidikan-title">
                 <div class="datadesa-card-header">
-                    <h3>Tingkat Pendidikan Penduduk</h3>
+                    <h2 id="pendidikan-title">Tingkat Pendidikan Penduduk</h2>
                 </div>
                 <div class="datadesa-card-body">
                     <div class="datadesa-chart-container">
-                        <canvas id="educationChart"></canvas>
+                        <canvas id="educationChart" aria-label="Tingkat pendidikan penduduk Desa Jonjo" role="img"></canvas>
+                        <div id="educationDescription" class="sr-only">
+                            Grafik tingkat pendidikan menunjukkan mayoritas penduduk memiliki pendidikan SLTA/Sederajat,
+                            diikuti oleh SLTP/Sederajat, Tamat SD/Sederajat, dan seterusnya.
+                        </div>
                     </div>
                     <div class="datadesa-education-notes">
                         <p><strong>Keterangan:</strong> Data pendidikan berdasarkan penduduk berusia 5 tahun ke atas. Diagram menunjukkan bahwa mayoritas penduduk memiliki pendidikan setingkat SLTA, diikuti oleh SLTP. Prosentase penduduk dengan pendidikan tinggi (Diploma dan Strata) masih relatif rendah.</p>
                     </div>
                 </div>
             </section>
+            
+            <!-- Data Table for screen readers -->
+            <section class="data-table-section" aria-labelledby="data-table-title">
+                <h2 id="data-table-title" class="sr-only">Tabel Data Kependudukan Desa Jonjo</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <caption>Data Kependudukan Desa Jonjo per November 2023</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Kategori</th>
+                                <th scope="col">Jumlah</th>
+                                <th scope="col">Persentase</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Total Penduduk</th>
+                                <td>3,842</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Laki-laki</th>
+                                <td>1,950</td>
+                                <td>50.7%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Perempuan</th>
+                                <td>1,892</td>
+                                <td>49.3%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Kepala Keluarga</th>
+                                <td>1,125</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="datadesa-footer">
+    <footer class="datadesa-footer" role="contentinfo">
         <div class="datadesa-container">
             <div class="datadesa-footer-content">
                 <div class="datadesa-footer-section">
@@ -255,7 +260,12 @@
                 </div>
                 <div class="datadesa-footer-section">
                     <h3>Update Terakhir</h3>
-                    <p>15 November 2023</p>
+                    <p><time datetime="2023-11-15">15 November 2023</time></p>
+                </div>
+                <div class="datadesa-footer-section">
+                    <h3>Kontak</h3>
+                    <p>Email: <a href="mailto:admin@desajonjo.example">admin@desajonjo.example</a></p>
+                    <p>Telepon: <a href="tel:+62123456789">+62 123 456 789</a></p>
                 </div>
             </div>
             <div class="datadesa-footer-bottom">
@@ -264,40 +274,14 @@
         </div>
     </footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/data-desa-charts.js"></script>
 
-	</body>
-
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
