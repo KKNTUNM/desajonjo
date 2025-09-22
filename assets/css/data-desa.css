@@ -304,4 +304,199 @@ caption {
     .datadesa-footer-content {
         flex-direction: column;
     }
+
+}
+
+/* Pekerjaan Section Styles */
+.pekerjaan-intro {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fc;
+    border-radius: 8px;
+    border-left: 4px solid #4e73df;
+}
+
+.pekerjaan-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pekerjaan-chart-container {
+    position: relative;
+    height: 300px;
+}
+
+.pekerjaan-highlight {
+    background: #f8f9fc;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.pekerjaan-highlight h3 {
+    margin-top: 0;
+    color: #4e73df;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.pekerjaan-top-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pekerjaan-top-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pekerjaan-top-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.pekerjaan-top-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #4e73df;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.pekerjaan-top-item:nth-child(1) .pekerjaan-top-badge {
+    background: #4e73df; /* Biru */
+}
+
+.pekerjaan-top-item:nth-child(2) .pekerjaan-top-badge {
+    background: #1cc88a; /* Hijau */
+}
+
+.pekerjaan-top-item:nth-child(3) .pekerjaan-top-badge {
+    background: #36b9cc; /* Cyan */
+}
+
+.pekerjaan-top-item:nth-child(4) .pekerjaan-top-badge {
+    background: #f6c23e; /* Kuning */
+}
+
+.pekerjaan-top-item:nth-child(5) .pekerjaan-top-badge {
+    background: #e74a3b; /* Merah */
+}
+
+.pekerjaan-top-item:nth-child(6) .pekerjaan-top-badge {
+    background: #6f42c1; /* Ungu */
+}
+
+.pekerjaan-top-content {
+    flex-grow: 1;
+}
+
+.pekerjaan-top-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #5a5c69;
+}
+
+.pekerjaan-top-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.pekerjaan-top-number {
+    font-weight: bold;
+    color: #4e73df;
+}
+
+.pekerjaan-top-percent {
+    color: #858796;
+    font-size: 0.9rem;
+}
+
+.pekerjaan-top-bar {
+    height: 8px;
+    background: #eaecf4;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pekerjaan-top-progress {
+    height: 100%;
+    background: #4e73df;
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+.pekerjaan-top-item:nth-child(1) .pekerjaan-top-progress {
+    background: #4e73df; /* Biru */
+}
+
+.pekerjaan-top-item:nth-child(2) .pekerjaan-top-progress {
+    background: #1cc88a; /* Hijau */
+}
+
+.pekerjaan-top-item:nth-child(3) .pekerjaan-top-progress {
+    background: #36b9cc; /* Cyan */
+}
+
+.pekerjaan-top-item:nth-child(4) .pekerjaan-top-progress {
+    background: #f6c23e; /* Kuning */
+}
+
+.pekerjaan-top-item:nth-child(5) .pekerjaan-top-progress {
+    background: #e74a3b; /* Merah */
+}
+
+.pekerjaan-top-item:nth-child(6) .pekerjaan-top-progress {
+    background: #6f42c1; /* Ungu */
+}
+
+.pekerjaan-table-container {
+    margin-top: 2rem;
+}
+
+.pekerjaan-table-container h3 {
+    color: #4e73df;
+    margin-bottom: 1rem;
+}
+
+/* Responsive design for pekerjaan section */
+@media (max-width: 992px) {
+    .pekerjaan-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .pekerjaan-chart-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .pekerjaan-top-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .pekerjaan-top-badge {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .pekerjaan-top-stats {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
 }
