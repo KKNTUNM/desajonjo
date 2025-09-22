@@ -1,0 +1,310 @@
+
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WEBSITE DESA JONJO</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+				<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">WEBSITE DESA</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="ProfilDesa.html">Profil Desa</a></li>
+								<li><a href="PemerintahDesa.html">Pemerintah Desa</a></li>
+								<li><a href="DataDesa.html">Data Desa</a></li>
+								<li><a href="Regulasi.html">Regulasi</a></li>
+								<li><a href="PetaDesa.html">Peta</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+  <ul class="links">
+    <li>
+      <a href="ProfilDesa.html" onclick="loadPage(event, 'ProfilDesa.html')">
+        <h3>Profil Desa</h3>
+        <p>Feugiat tempus veroeros dolo</p>
+      </a>
+    </li>
+    <li>
+      <a href="PemerintahDesa.html" onclick="loadPage(event, 'PemerintahDesa.html')">
+        <h3>Pemerintah Desa</h3>
+        <p>Struktur Aparat Desa</p>
+      </a>
+    </li>
+    <li>
+      <a href="DataDesa.html" onclick="loadPage(event, 'DataDesa.html')">
+        <h3>Data Desa</h3>
+        <p>Membangun Desa Melalui Data</p>
+      </a>
+    </li>
+    <li>
+      <a href="Regulasi.html" onclick="loadPage(event, 'Regulasi.html')">
+        <h3>Regulasi</h3>
+        <p>Porta lectus amet ultricies</p>
+      </a>
+    </li>
+    <li>
+      <a href="PetaDesa.html" onclick="loadPage(event, 'PetaDesa.html')">
+        <h3>Peta</h3>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- Tempat file ditampilkan -->
+<div id="content" style="margin-top:20px; padding:20px; border:1px solid #ccc;"></div>
+
+<script>
+  function loadPage(event, url) {
+    event.preventDefault(); // cegah pindah halaman
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("content").innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById("content").innerHTML = "<p>Gagal memuat konten.</p>";
+      });
+  }
+</script>
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+				<main class="datadesa-main">
+					<div class="datadesa-container">
+						<h2 class="datadesa-section-title">Data Kependudukan Desa Jonjo</h2>
+						
+						<!-- Jumlah Penduduk dan Kepala Keluarga -->
+						<section class="datadesa-card">
+							<div class="datadesa-card-header">
+								<h3>Jumlah Penduduk dan Kepala Keluarga</h3>
+							</div>
+							<div class="datadesa-card-body">
+								<div class="datadesa-stats-grid">
+									<div class="datadesa-stat-box">
+										<div class="datadesa-stat-icon">
+											<i class="icon">👥</i>
+										</div>
+										<div class="datadesa-stat-content">
+											<h4>Total Penduduk</h4>
+											<span class="datadesa-stat-number">3,842</span>
+										</div>
+									</div>
+									
+									<div class="datadesa-stat-box">
+										<div class="datadesa-stat-icon">
+											<i class="icon">🏠</i>
+										</div>
+										<div class="datadesa-stat-content">
+											<h4>Kepala Keluarga</h4>
+											<span class="datadesa-stat-number">1,125</span>
+										</div>
+									</div>
+									
+									<div class="datadesa-stat-box">
+										<div class="datadesa-stat-icon">
+											<i class="icon">♂️</i>
+										</div>
+										<div class="datadesa-stat-content">
+											<h4>Laki-laki</h4>
+											<span class="datadesa-stat-number">1,950</span>
+											<span class="datadesa-stat-percent">50.7%</span>
+										</div>
+									</div>
+									
+									<div class="datadesa-stat-box">
+										<div class="datadesa-stat-icon">
+											<i class="icon">♀️</i>
+										</div>
+										<div class="datadesa-stat-content">
+											<h4>Perempuan</h4>
+											<span class="datadesa-stat-number">1,892</span>
+											<span class="datadesa-stat-percent">49.3%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Piramida Penduduk -->
+						<section class="datadesa-card">
+							<div class="datadesa-card-header">
+								<h3>Piramida Penduduk Berdasarkan Kelompok Umur</h3>
+							</div>
+							<div class="datadesa-card-body">
+								<div class="datadesa-chart-container">
+									<canvas id="populationPyramid"></canvas>
+								</div>
+								<div class="datadesa-chart-description">
+									<h4>Interpretasi Piramida Penduduk</h4>
+									<p>Piramida penduduk Desa Jonjo menunjukkan struktur penduduk yang cukup seimbang antara kelompok usia muda dan dewasa. Dapat dilihat bahwa:</p>
+									<ul>
+										<li>Kelompok usia produktif (15-64 tahun) mendominasi dengan persentase 62% dari total penduduk</li>
+										<li>Kelompok usia muda (0-14 tahun) sebesar 28% menunjukkan tingkat kelahiran yang stabil</li>
+										<li>Kelompok usia lanjut (65+) sebesar 10% menunjukkan peningkatan harapan hidup</li>
+										<li>Bentuk piramida yang melebar di bagian tengah mengindikasikan transisi demografi menuju masyarakat menua</li>
+									</ul>
+								</div>
+							</div>
+						</section>
+
+						<!-- Distribusi Penduduk per Dusun -->
+						<section class="datadesa-card">
+							<div class="datadesa-card-header">
+								<h3>Distribusi Penduduk Berdasarkan Dusun</h3>
+							</div>
+							<div class="datadesa-card-body">
+								<div class="datadesa-chart-container">
+									<canvas id="dusunDistribution"></canvas>
+								</div>
+								<div class="datadesa-dusun-details">
+									<div class="datadesa-dusun-item">
+										<span class="datadesa-dusun-color" style="background-color: #4e73df;"></span>
+										<span class="datadesa-dusun-name">Dusun Bukit Parigi</span>
+										<span class="datadesa-dusun-population">1,250 jiwa (32.5%)</span>
+									</div>
+									<div class="datadesa-dusun-item">
+										<span class="datadesa-dusun-color" style="background-color: #1cc88a;"></span>
+										<span class="datadesa-dusun-name">Dusun Jonjo</span>
+										<span class="datadesa-dusun-population">980 jiwa (25.5%)</span>
+									</div>
+									<div class="datadesa-dusun-item">
+										<span class="datadesa-dusun-color" style="background-color: #36b9cc;"></span>
+										<span class="datadesa-dusun-name">Dusun Baliti</span>
+										<span class="datadesa-dusun-population">872 jiwa (22.7%)</span>
+									</div>
+									<div class="datadesa-dusun-item">
+										<span class="datadesa-dusun-color" style="background-color: #f6c23e;"></span>
+										<span class="datadesa-dusun-name">Dusun Laloasa</span>
+										<span class="datadesa-dusun-population">740 jiwa (19.3%)</span>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Tingkat Pendidikan -->
+						<section class="datadesa-card">
+							<div class="datadesa-card-header">
+								<h3>Tingkat Pendidikan Penduduk</h3>
+							</div>
+							<div class="datadesa-card-body">
+								<div class="datadesa-chart-container">
+									<canvas id="educationChart"></canvas>
+								</div>
+								<div class="datadesa-education-notes">
+									<p><strong>Keterangan:</strong> Data pendidikan berdasarkan penduduk berusia 5 tahun ke atas. Diagram menunjukkan bahwa mayoritas penduduk memiliki pendidikan setingkat SLTA, diikuti oleh SLTP. Prosentase penduduk dengan pendidikan tinggi (Diploma dan Strata) masih relatif rendah.</p>
+								</div>
+							</div>
+						</section>
+					</div>
+				
+					<!-- Footer -->
+
+					<footer class="datadesa-footer">
+						<div class="datadesa-container">
+							<div class="datadesa-footer-content">
+								<div class="datadesa-footer-section">
+									<h3>Data Desa Jonjo</h3>
+									<p>Sumber data: Sensus Penduduk Oleh KKNT Statistika UNM Tahun 2025</p>
+								</div>
+								<div class="datadesa-footer-section">
+									<h3>Update Terakhir</h3>
+									<p>September 2025</p>
+								</div>
+							</div>
+							<div class="datadesa-footer-bottom">
+								<p>&copy; 2025 Pemerintah Desa Jonjo. Semua Hak Dilindungi.</p>
+							</div>
+						</div>
+					</footer>
+
+				</main>
+
+
+
+
+			
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
