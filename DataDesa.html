@@ -247,6 +247,185 @@
                     </table>
                 </div>
             </section>
+
+            <!-- Data Pekerjaan -->
+<section class="datadesa-card" aria-labelledby="pekerjaan-title">
+    <div class="datadesa-card-header">
+        <h2 id="pekerjaan-title">Data Penduduk Berdasarkan Pekerjaan</h2>
+    </div>
+    <div class="datadesa-card-body">
+        <div class="pekerjaan-intro">
+            <p>Distribusi pekerjaan penduduk Desa Jonjo menunjukkan bahwa sektor pertanian masih menjadi penyerap tenaga kerja terbesar, diikuti oleh perdagangan dan jasa.</p>
+        </div>
+        
+        <div class="pekerjaan-content">
+            <!-- Chart untuk seluruh data pekerjaan -->
+            <div class="pekerjaan-chart-container">
+                <canvas id="pekerjaanChart" aria-label="Diagram pekerjaan penduduk Desa Jonjo" role="img"></canvas>
+                <div id="pekerjaanDescription" class="sr-only">
+                    Diagram lingkaran menunjukkan distribusi pekerjaan penduduk Desa Jonjo. 
+                    Pertanian merupakan sektor dengan penyerap tenaga kerja terbesar sebesar 35%, 
+                    diikuti oleh Perdagangan 18%, Buruh 15%, PNS 12%, Wiraswasta 10%, dan lainnya 10%.
+                </div>
+            </div>
+            
+            <!-- Highlight 6 pekerjaan dengan jumlah terbanyak -->
+            <div class="pekerjaan-highlight" aria-labelledby="pekerjaan-top-title">
+                <h3 id="pekerjaan-top-title">Enam Jenis Pekerjaan dengan Jumlah Terbanyak</h3>
+                <div class="pekerjaan-top-grid">
+                    <div class="pekerjaan-top-item" role="region" aria-label="Pertanian">
+                        <div class="pekerjaan-top-badge">1</div>
+                        <div class="pekerjaan-top-content">
+                            <h4>Pertanian</h4>
+                            <div class="pekerjaan-top-stats">
+                                <span class="pekerjaan-top-number">1,345</span>
+                                <span class="pekerjaan-top-percent">35%</span>
+                            </div>
+                            <div class="pekerjaan-top-bar">
+                                <div class="pekerjaan-top-progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pekerjaan-top-item" role="region" aria-label="Perdagangan">
+                        <div class="pekerjaan-top-badge">2</div>
+                        <div class="pekerjaan-top-content">
+                            <h4>Perdagangan</h4>
+                            <div class="pekerjaan-top-stats">
+                                <span class="pekerjaan-top-number">692</span>
+                                <span class="pekerjaan-top-percent">18%</span>
+                            </div>
+                            <div class="pekerjaan-top-bar">
+                                <div class="pekerjaan-top-progress" style="width: 51.4%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pekerjaan-top-item" role="region" aria-label="Buruh">
+                        <div class="pekerjaan-top-badge">3</div>
+                        <div class="pekerjaan-top-content">
+                            <h4>Buruh</h4>
+                            <div class="pekerjaan-top-stats">
+                                <span class="pekerjaan-top-number">576</span>
+                                <span class="pekerjaan-top-percent">15%</span>
+                            </div>
+                            <div class="pekerjaan-top-bar">
+                                <div class="pekerjaan-top-progress" style="width: 42.8%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pekerjaan-top-item" role="region" aria-label="PNS">
+                        <div class="pekerjaan-top-badge">4</div>
+                        <div class="pekerjaan-top-content">
+                            <h4>PNS</h4>
+                            <div class="pekerjaan-top-stats">
+                                <span class="pekerjaan-top-number">461</span>
+                                <span class="pekerjaan-top-percent">12%</span>
+                            </div>
+                            <div class="pekerjaan-top-bar">
+                                <div class="pekerjaan-top-progress" style="width: 34.3%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pekerjaan-top-item" role="region" aria-label="Wiraswasta">
+                        <div class="pekerjaan-top-badge">5</div>
+                        <div class="pekerjaan-top-content">
+                            <h4>Wiraswasta</h4>
+                            <div class="pekerjaan-top-stats">
+                                <span class="pekerjaan-top-number">384</span>
+                                <span class="pekerjaan-top-percent">10%</span>
+                            </div>
+                            <div class="pekerjaan-top-bar">
+                                <div class="pekerjaan-top-progress" style="width: 28.5%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pekerjaan-top-item" role="region" aria-label="Lainnya">
+                        <div class="pekerjaan-top-badge">6</div>
+                        <div class="pekerjaan-top-content">
+                            <h4>Lainnya</h4>
+                            <div class="pekerjaan-top-stats">
+                                <span class="pekerjaan-top-number">384</span>
+                                <span class="pekerjaan-top-percent">10%</span>
+                            </div>
+                            <div class="pekerjaan-top-bar">
+                                <div class="pekerjaan-top-progress" style="width: 28.5%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tabel data lengkap untuk aksesibilitas -->
+        <div class="pekerjaan-table-container">
+            <h3>Data Lengkap Jenis Pekerjaan</h3>
+            <div class="table-wrapper">
+                <table>
+                    <caption>Data lengkap jenis pekerjaan penduduk Desa Jonjo</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Jenis Pekerjaan</th>
+                            <th scope="col">Jumlah</th>
+                            <th scope="col">Persentase</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <th scope="row">Pertanian</th>
+                            <td>1,345</td>
+                            <td>35%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <th scope="row">Perdagangan</th>
+                            <td>692</td>
+                            <td>18%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <th scope="row">Buruh</th>
+                            <td>576</td>
+                            <td>15%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <th scope="row">PNS</th>
+                            <td>461</td>
+                            <td>12%</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <th scope="row">Wiraswasta</th>
+                            <td>384</td>
+                            <td>10%</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <th scope="row">Lainnya</th>
+                            <td>384</td>
+                            <td>10%</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2">Total</th>
+                            <td>3,842</td>
+                            <td>100%</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+            
         </div>
     </main>
 
@@ -285,3 +464,4 @@
 
 </body>
 </html>
+
