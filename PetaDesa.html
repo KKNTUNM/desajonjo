@@ -1,0 +1,236 @@
+
+<!DOCTYPE HTML>
+
+<html lang="id">
+	<head>
+		<title>WEBSITE DESA JONJO</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+		<!-- Plugin kompas -->
+		<script src="https://unpkg.com/leaflet-compass/dist/leaflet-compass.min.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-compass/dist/leaflet-compass.css"/>
+		<!-- Plugin inset mini map -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.css"/>
+		<script src="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.js"></script>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">WEBSITE DESA</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="ProfilDesa.html">Profil Desa</a></li>
+								<li><a href="PemerintahDesa.html">Pemerintah Desa</a></li>
+								<li><a href="DataDesa.html">Data Desa</a></li>
+								<li><a href="Regulasi.html">Regulasi</a></li>
+								<li><a href="PetaDesa.html">Peta</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+  <ul class="links">
+    <li>
+      <a href="ProfilDesa.html" onclick="loadPage(event, 'ProfilDesa.html')">
+        <h3>Profil Desa</h3>
+        <p>Feugiat tempus veroeros dolo</p>
+      </a>
+    </li>
+    <li>
+      <a href="PemerintahDesa.html" onclick="loadPage(event, 'PemerintahDesa.html')">
+        <h3>Pemerintah Desa</h3>
+        <p>Struktur Aparat Desa</p>
+      </a>
+    </li>
+    <li>
+      <a href="DataDesa.html" onclick="loadPage(event, 'DataDesa.html')">
+        <h3>Data Desa</h3>
+        <p>Membangun Desa Melalui Data</p>
+      </a>
+    </li>
+    <li>
+      <a href="Regulasi.html" onclick="loadPage(event, 'Regulasi.html')">
+        <h3>Regulasi</h3>
+        <p>Porta lectus amet ultricies</p>
+      </a>
+    </li>
+    <li>
+      <a href="PetaDesa.html" onclick="loadPage(event, 'PetaDesa.html')">
+        <h3>Peta</h3>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- Tempat file ditampilkan -->
+<div id="content" style="margin-top:20px; padding:20px; border:1px solid #ccc;"></div>
+
+<script>
+  function loadPage(event, url) {
+    event.preventDefault(); // cegah pindah halaman
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("content").innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById("content").innerHTML = "<p>Gagal memuat konten.</p>";
+      });
+  }
+</script>
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+				<div class="container">
+					<header>
+						<h1>Peta Desa Jonjo</h1>
+						<p>Kecamatan Parigi, Kabupaten Gowa, Sulawesi Selatan</p>
+					</header>						
+					<div class="controls">
+						<button class="control-btn" id="zoom-in">
+							<i>+</i> Perbesar
+						</button>
+						<button class="control-btn" id="zoom-out">								<i>-</i> Perkecil
+						</button>
+						<button class="control-btn" id="reset-view">
+							<i>↺</i> Reset Peta
+						</button>
+					</div>
+						
+					<div class="filter-controls">
+						<button class="filter-btn active" data-filter="all">Semua Lokasi</button>
+						<button class="filter-btn" data-filter="kantor_desa">Kantor Desa</button>
+						<button class="filter-btn" data-filter="pasar_desa">Pasar Desa</button>
+						<button class="filter-btn" data-filter="masjid">Masjid</button>
+						<button class="filter-btn" data-filter="sekolah">Sekolah</button>							<button class="filter-btn" data-filter="posyandu">Posyandu</button>
+						<button class="filter-btn" data-filter="lapangan">Lapangan</button>
+					</div>
+						
+					<div class="map-container">
+						<div id="map"></div>				
+						<div class="legend">
+							<h4>Legenda</h4>
+							<div class="legend-item">
+								<span class="color-box kantor-desa"></span>
+								<span>Kantor Desa</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box pasar-desa"></span>
+								<span>Pasar Desa</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box masjid"></span>
+								<span>Masjid</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box sekolah"></span>
+								<span>Sekolah</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box posyandu"></span>
+								<span>Posyandu</span>
+							</div>
+							<div class="legend-item">
+								<span class="color-box lapangan"></span>
+								<span>Lapangan</span>
+							</div>
+							<div class="legend-item">
+								<span style="background: #3498db; opacity: 0.2; width: 20px; height: 20px; display: inline-block; margin-right: 10px; border: 1px dashed #3498db;"></span>
+								<span>Batas Desa</span>
+							</div>
+						</div>
+					</div>
+						
+					<div class="info-panel">
+						<h3>Informasi Desa</h3>
+						<div class="info-content">
+							<p>Desa Jonjo terletak di Kecamatan Parigi, Kabupaten Gowa, Provinsi Sulawesi Selatan. Desa ini memiliki beragam fasilitas umum yang melayani kebutuhan masyarakat setempat.</p>
+							<p>Peta ini menunjukkan batas wilayah desa serta lokasi penting seperti kantor desa, pasar, masjid, sekolah, posyandu, dan lapangan.</p>
+								
+							<div class="data-info">
+								<h4>Data yang Ditampilkan</h4>
+								<p>Peta menampilkan 13 masjid, 3 sekolah, 5 posyandu, dan lokasi penting lainnya di Desa Jonjo. Gunakan tombol filter di atas peta untuk menampilkan hanya kategori tertentu.</p>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<p> © 2025 Peta Interaktif Desa Jonjo | Dikembangkan oleh KKNT Statistika UNM Tahun 2025 untuk Website Desa Jonjo</p>
+					</footer>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

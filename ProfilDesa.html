@@ -1,0 +1,192 @@
+
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WEBSITE DESA JONJO</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">WEBSITE DESA</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="ProfilDesa.html">Profil Desa</a></li>
+								<li><a href="PemerintahDesa.html">Pemerintah Desa</a></li>
+								<li><a href="DataDesa.html">Data Desa</a></li>
+								<li><a href="Regulasi.html">Regulasi</a></li>
+								<li><a href="PetaDesa.html">Peta</a></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+  <ul class="links">
+    <li>
+      <a href="ProfilDesa.html" onclick="loadPage(event, 'ProfilDesa.html')">
+        <h3>Profil Desa</h3>
+        <p>Feugiat tempus veroeros dolo</p>
+      </a>
+    </li>
+    <li>
+      <a href="PemerintahDesa.html" onclick="loadPage(event, 'PemerintahDesa.html')">
+        <h3>Pemerintah Desa</h3>
+        <p>Struktur Aparat Desa</p>
+      </a>
+    </li>
+    <li>
+      <a href="DataDesa.html" onclick="loadPage(event, 'DataDesa.html')">
+        <h3>Data Desa</h3>
+        <p>Membangun Desa Melalui Data</p>
+      </a>
+    </li>
+    <li>
+      <a href="Regulasi.html" onclick="loadPage(event, 'Regulasi.html')">
+        <h3>Regulasi</h3>
+        <p>Porta lectus amet ultricies</p>
+      </a>
+    </li>
+    <li>
+      <a href="PetaDesa.html" onclick="loadPage(event, 'PetaDesa.html')">
+        <h3>Peta</h3>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- Tempat file ditampilkan -->
+<div id="content" style="margin-top:20px; padding:20px; border:1px solid #ccc;"></div>
+
+<script>
+  function loadPage(event, url) {
+    event.preventDefault(); // cegah pindah halaman
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("content").innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById("content").innerHTML = "<p>Gagal memuat konten.</p>";
+      });
+  }
+</script>
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+<!-- Main -->
+	<main class="profil-container">
+		<!-- Section Narasi // Motto Desa: "Assituruseng, Assipainge', Assibahagia.""--> 
+		<section class="narasi">
+			<h2 style="text-align: center;">Profil Desa</h2>
+			<p style="text-align: center;"> "Gotong Royong Membangun, Kearifan Menuntun" </p>
+
+			<br>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nibh lacus, ullamcorper sed pretium quis, vehicula pretium odio. Proin aliquet auctor diam. Aliquam erat volutpat. Donec consectetur erat dolor, in euismod ex cursus id. Proin maximus quis eros in maximus. Sed at eleifend metus, id tempor sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris at eleifend sapien, et posuere elit. Sed elementum venenatis lectus ut porta. Aliquam ultricies at tellus in facilisis. Morbi vel efficitur ligula.
+				<br>
+				Curabitur orci mauris, congue et dignissim a, gravida sagittis justo. Morbi vel suscipit sapien. Donec egestas sem suscipit nulla convallis congue. In hac habitasse platea dictumst. Morbi vel libero ac ligula pellentesque accumsan. Nam vulputate a sem a mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut rutrum id ligula eget mattis.
+				<br>
+				Ut neque dolor, dictum at dictum eu, tempor quis est. Donec eget orci quis diam elementum accumsan. Donec congue eros et tellus tempor, sit amet finibus metus pellentesque. Morbi tempus ut dolor sed tincidunt. Nunc condimentum accumsan felis non ullamcorper. Sed at consectetur nisl, nec luctus sapien. Pellentesque nec est eget urna euismod laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				<br>
+				Praesent a leo id dui accumsan feugiat. Vivamus in elit varius, lobortis massa sit amet, lobortis libero. Etiam sollicitudin luctus dapibus. Nulla sodales arcu dolor, vitae condimentum lorem dictum placerat. Aenean erat nisi, malesuada a urna eget, vehicula lobortis sem. Nam tristique, eros ac auctor consequat, nisi neque maximus mi, sed venenatis lorem nisl id tellus. Nam varius cursus placerat. Nullam vestibulum semper sem in finibus. Sed in tellus nec mi scelerisque volutpat id a tellus. Donec at lectus erat. Nullam fringilla molestie ultrices. Ut vehicula fringilla nibh vel ullamcorper.
+				<br>
+				Quisque turpis augue, hendrerit ut erat et, sodales lacinia nunc. Nulla eu facilisis enim. Fusce dolor velit, fringilla sit amet tristique sit amet, finibus eu sem. Donec ullamcorper vel elit eu efficitur. Praesent convallis velit nisi, in bibendum tortor varius quis. Aliquam vitae mauris metus. Aenean non lobortis lectus. Cras porta pulvinar nunc, quis ornare justo tempus a. Aenean vestibulum et enim ut laoreet. Maecenas in leo vitae neque commodo auctor at a nunc. Ut leo justo, dignissim ut commodo eget, fermentum eu ligula. Duis at nunc finibus, vehicula dui nec, mollis elit. Morbi euismod ornare nisi nec bibendum. Duis malesuada, orci at congue fermentum, enim tellus bibendum odio, quis mattis lectus velit at elit. Curabitur lacinia quis magna a efficitur. Duis rutrum mi sed urna convallis, at egestas sem efficitur.
+			</p>
+		</section>
+
+		<!-- Section Video -->
+		<section class="video-section">
+			<h2>Video Profil Desa</h2>
+			<!-- "https://youtube.com/embed/link" -->
+			<div class="video-container">
+				<iframe 
+					src="https://youtube.com/embed/GVZ2VPcOMyQ?si=gkvHWWfiIFMQxZjb" 
+					title="Video Profil Desa" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+					allowfullscreen>
+				</iframe>
+			</div>
+			
+			<div class="video-info">
+				<p>Video profil Desa kami yang menampilkan keindahan alam dan kehidupan masyarakat.</p>
+			</div>
+		</section>
+	</main>
+
+    </section>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
