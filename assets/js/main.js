@@ -597,9 +597,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 new Chart(dusunCtx, {
                     type: 'pie',
                     data: {
-                        labels: ['Dusun Krajan', 'Dusun Sumber', 'Dusun Krajan Barat', 'Dusun Krajan Timur'],
+                        labels: ['Dusun Bukit Parigi', 'Dusun Jonjo', 'Dusun Baliti', 'Dusun Laloasa'],
                         datasets: [{
-                            data: [1250, 980, 872, 740],
+                            data: [248, 398, 306, 835],
                             backgroundColor: [
                                 'rgba(78, 115, 223, 0.8)',
                                 'rgba(28, 200, 138, 0.8)',
